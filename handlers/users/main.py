@@ -14,7 +14,7 @@ async def ban_user(message: types.Message):
     else:
         user = db.get_message_chat_id(message.reply_to_message.message_id)
         db.add_banned_user(user)
-    await message.reply("Foydalanuvchi bloklandi.")
+    await message.reply("Pengguna telah diblokir‌‌.")
 
 
 
@@ -26,7 +26,7 @@ async def unban_user(message: types.Message):
     else:
         user = db.get_message_chat_id(message.reply_to_message.message_id)
         db.remove_banned_user(user)
-    await message.reply("Foydalanuvchi qayta qabul qilindi.")
+    await message.reply("Pengguna dibebas blokir.")
 
 
 @dp.message_handler(IsAdmin(), content_types = types.ContentTypes.ANY)
