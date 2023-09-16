@@ -18,7 +18,7 @@ from filters.admins import IsAdmin
 async def bot_echo(message: types.Message):
     is_ban = db.is_banned_user(message.from_user.id)
     if is_ban:
-        return await message.answer("Siz qora ro'yxatdasiz!")
+        return await message.answer("🚯You are blocked from this chat by admin!")
     message_ = await message.forward(ADMINS[0])
     import datetime
     prev = datetime.datetime.today()
